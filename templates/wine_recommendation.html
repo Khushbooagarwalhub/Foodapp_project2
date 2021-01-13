@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wine Recommendations!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+​
+<style>
+    html,
+    body,
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Papyrus', fantasy;
+        ​
+    }
+
+    h2 {
+        font-family: 'Brush Script MT', cursive;
+        font-size: 28px;
+    }
+
+</style>
+
+<body
+    style="background-image: url('https://raw.githubusercontent.com/selgho23/Bootcamp_Project2/khushboo_branch/static/shutterstock_presentation.jpg')">
+
+    <div class='navbar navbar default'>
+        <div class="dropdown">
+            <select class="selectpicker custom-button" id="choose-page" onchange="location = this.value">
+                <option>Stay on this page?</option>
+                <option value="http://127.0.0.1:5000/">Back to Home Page</option>
+                <option value="http://127.0.0.1:5000/wine-page">Find Another Wine Pairing</option>
+            </select>
+        </div>
+        <div class="container">
+            <div class="jumbotron" style="text-align: center">
+                <h1>Wine Recommendations</h1>
+                <p></p>
+
+            </div>
+        </div>
+        ​
+        <div class="row">
+            <div class="col-md-12" style="text-align:center">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row margin-top-50">
+                <div class="col-md-3">
+                    <aside class="filters">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter Search</div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <ul class="list-group" id="filters">
+                                            <li class="filter list-group-item">
+                                                <label for="food">Enter your wine preference</label>
+                                                <input class="form-control" id="winetype" type="text"
+                                                    placeholder="Merlot">
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button id="filter-btn" type="submit" class="btn btn-default">Get More Info</button>
+                                    <div id="more_info"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-8 sidebar">
+                    <div class="col-md-12" width: 500px; height: 50px;>
+                        <div id="table-area" class="">
+                            <table id="food-table" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Wine</th>
+                                        <th>Avgerage Rating</th>
+                                        <th>Price</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div id="plot"></div>
+                    </div>
+
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                <script src="../static/js/wine2data.js"></script> -->
+                <script src="../static/js/wine_app.js"></script> -->
+</body>
+
+</html>

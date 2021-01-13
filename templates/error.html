@@ -1,0 +1,48 @@
+<head>
+    <meta charset="utf-8">
+    <title>Project 2 Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Flavors" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<style>
+    .custom-button {
+        background: #8a8282;
+        color: whitesmoke;
+        font-size: 18px;
+    }
+
+    .margin-top-15 {
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    #select-recipe {
+        background: #854442;
+        border: 5px solid 119425;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class='header'>
+        <div class='navbar navbar default' style="background: #FDF2E9">
+            <div class='navbar header' style="background: #FDF2E9">
+                <a class="btn custom-button" id="back-button" role="button" href="http://127.0.0.1:5000/recipe-page">Find Other Recipes</a>
+            </div>
+        </div>
+    </div>
+    <div class='wrapper' id='results-wrap'>
+        <h1>No Results Found</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script type="text/javascript" src="../static/js/config.js"></script>
+    <script type="text/javascript" src="../static/js/results.js"></script>
+</body>
+
+</html>

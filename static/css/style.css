@@ -1,0 +1,217 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+td { background-color: floralwhite; }
+  
+.jumbotron {
+    background-color:floralwhite;
+    width: 90%;   
+}
+
+.custom-button {
+  background: gray;
+  color: whitesmoke;
+  font-family: 'Papyrus', fantasy;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  border: 10px solid 119425;
+  border-radius: 10px;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #5cb85c;
+  border: 10px solid 119425;
+  border-radius: 10px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+#food-table {
+  background: white;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #fff4e6 !important;
+}
+
+.navbar-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff4e6;
+}
+
+.header {
+  background-color: #be9b7b;
+}
+
+.banner-text {
+  color: #fff4e6;
+  font-weight: bolder;
+  text-align: center;
+  font-family: 'Sofia';
+}
+
+.banner-text h1 {
+  font-size: 65px;
+  text-align: center;
+}
+
+.banner-title{
+  background: rgb(190, 155, 123, 0.9);
+  padding: 40px;
+  border: 10px solid  119425;
+  border-radius: 300px;
+  margin-top: 5%;
+}
+.banner {
+  position: relative;
+  padding: 20px;
+  height: 100%;
+  margin: 0;
+  background: #784212;
+  background-image: url("http://www.gamecha.host/wp-content/uploads/2016/05/slide2.jpeg");
+  background-size: cover;
+}
+
+#contraints ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    float: left;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  padding: 30px;
+  overflow: auto;
+}
+
+.wrapper h1 {
+  color: #3c2f2f ;
+  text-align: center;
+  font-family: 'Calligraffitti'
+}
+.wrapper h4 {
+  color: #3c2f2f;
+  font-family: 'Calligraffitti';
+  
+}
+
+#recipe-selection-criteria {
+  background: #FDF2E9;
+}
+
+#results-wrap {
+  background: #FDF2E9;
+}
+
+#results-wrap h2 {
+  color: #5E2605;
+  font-family: 'Caveat';
+  font-size: 40;
+  font-weight: bolder;
+}
+
+#results-wrap h1 {
+  text-align: left;
+  color: #3c2f2f;
+  font-family: 'Caveat';
+  font-size: 70;
+  font-weight: bolder;
+}
+
+#nutrition-summary h2 {
+  color: #5E2605;
+  font-family: 'Caveat';
+  font-size: 40;
+  font-weight: bolder;
+}
+
+#ingredients-instructions h3 {
+  color: #8B4513;
+  font-family: 'Caveat';
+  font-size: 30;
+  font-weight: bold;
+}
+
+.nav li a {
+  font-size: 20px;
+  font-weight: bold;
+  color: beige;
+}
+
+#active a {
+  background: beige;
+  color: #854442;
+}
+
+.navbar {
+  padding: 5px;
+  margin: 0;
+}
+
+.panel-body {
+  padding: 0;
+  background-color: #fff4e6
+}
+
+.form-group ul li {
+  background-color: #fff4e6;
+}
+.constraints .panel-heading {
+  background: #854442;
+  color: whitesmoke;
+  padding: 5%;
+  font-weight: bold;
+}
+
+.constraints {
+  margin-top: 5px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+/* input placeholder color changes */
+.form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #8e979f;
+}
+
+.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #8e979f;
+}
+
+.form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #8e979f;
+}
+
+.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #8e979f;
+}
+
+
+

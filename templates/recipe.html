@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Project 2 Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default justify-content-end">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+                        <img class="logo" src="../static/images/logo.png" width=50 height=40>
+                    </a>
+                    gastrónoma
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="http://localhost:5000/">Home</a>
+                    </li>
+                    <li class="nav-item" id="active">
+                        <a class="nav-link" href="http://localhost:5000/recipe-page">Find Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/wine-page">Wine Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/wine-recommendation-page">Wine
+                            Recommendations</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="wrapper" id="recipe-selection-criteria">
+        <h1><b>Customize Your Meal</b></h1>
+        <h4><b>Pick general food preferences</b></h4>
+        <div class="row margin-top-30">
+            <div class="col-md-4">
+                <aside class="constraints">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="general">Don't have a preference? Just leave the text boxes
+                            empty,
+                            and scroll down.</div>
+                        <div class="panel-body">
+                            <form action="http://localhost:5000/selection" method="POST">
+                                <div class="form-group">
+                                    <ul class="list-group" id="constraints">
+                                        <li class="constraint list-group-item">
+                                            <label for="diet">Diet</label>
+                                            <input class="form-control" id="diet" type="text"
+                                                placeholder="e.g. gluten free" name="diet">
+                                        </li>
+                                        <li class="constraint list-group-item">
+                                            <label for="cuisine">Cuisine</label>
+                                            <input class="form-control" id="cuisine" type="text"
+                                                placeholder="e.g. italian" name="cuisine">
+                                        </li>
+                                        <li class="constraint list-group-item">
+                                            <label for="excludeIngredients">Ingredients to Exclude</label>
+                                            <input class="form-control" id="excludeIngredients" type="text"
+                                                placeholder="e.g. eggs, milk, nuts, ..." name="excludeIngredients">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button id="general-btn" type="submit" name="btn-identifier"
+                                    value="general-btn" class="btn btn-default">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-4">
+                <p style="color: #3E2723"><b><em>List of Supported Diets</em></b></p>
+                <table class="table" id="diet-list">
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <p style="color: #3E2723"><b><em>List of Supported Cuisines</em></b></p>
+                <table class="table" id="cuisine-list">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <h4><b>Choose one or more of the following search options.
+                Once you've made your selections, click</b>
+            <a href="http://localhost:5000/results" role="button" class="btn btn-link" onclick="move()">
+                <h3>Generate</h3><a>
+        </h4>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+        <div class="row margin-top-30">
+            <div class="col-md-4">
+                <aside class="constraints">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Keeping track of calories and macros?
+                            <br> This is the box for you.</div>
+                        <div class="panel-body">
+                            <form action="http://localhost:5000/selection" method="POST">
+                                <div class="form-group" id="constraints">
+                                    <ul class="list-group">
+                                        <li class="constraint list-group-item">
+                                            <label for="maxCalories">Target Calories</label>
+                                            <input class="form-control" id="maxCalories" type="text"
+                                                placeholder="e.g. 800" name="maxCalories">
+                                        </li>
+                                        <li class="constraint list-group-item">
+                                            <label for="maxCarbs">Carbohydrate (g)</label>
+                                            <input class="form-control" id="maxCarbs" type="text" placeholder="e.g. 30"
+                                                name="maxCarbs">
+                                        </li>
+                                        <li class="constraint list-group-item">
+                                            <label for="maxProtein">Protein (g)</label>
+                                            <input class="form-control" id="maxProtein" type="text"
+                                                placeholder="e.g. 50" name="maxProtein">
+                                        </li>
+                                        <li class="constraint list-group-item">
+                                            <label for="maxFat">Fat (g)</label>
+                                            <input class="form-control" id="maxFat" type="text" placeholder="e.g. 20"
+                                                name="maxFat">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button id="macros-btn" type="submit" name="btn-identifier"
+                                    value="macros-btn" class="btn btn-default selection-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-4">
+                <aside class="constraints">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Don't feel like shopping?
+                            <br>Add a list of ingredients and we'll find you a recipe.</div>
+                        <div class="panel-body">
+                            <form action="http://localhost:5000/selection" method="POST">
+                                <div class="form-group">
+                                    <ul class="list-group" id="constraints">
+                                        <li class="constraint list-group-item">
+                                            <label for="includeIngredients">Ingredients</label>
+                                            <input class="form-control" id="includeIngredients" type="text"
+                                                placeholder="e.g. tomato, cheese, ..." name="includeIngredients">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button id="ingredients-btn" type="submit"
+                                    name="btn-identifier" value="ingredients-btn"
+                                    class="btn btn-default selection-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-md-4">
+                <aside class="constraints">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Craving something specific?
+                            <br>Describe your dish and get a recipe to match.</div>
+                        <div class="panel-body">
+                            <form action="http://localhost:5000/selection" method="POST">
+                                <div class="form-group">
+                                    <ul class="list-group" id="constraints">
+                                        <li class="constraint list-group-item">
+                                            <label for="query">Dish</label>
+                                            <input class="form-control" id="query" type="text"
+                                                placeholder="e.g. spaghetti and meatballs" name="query">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button id="description-btn" type="submit" name="btn-identifier"
+                                    value="description-btn" class="btn btn-default selection-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="../static/js/app.js"></script>
+</body>
+
+</html>
